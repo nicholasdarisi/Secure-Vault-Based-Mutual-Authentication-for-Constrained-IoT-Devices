@@ -1,0 +1,38 @@
+STATUS: 401
+BODY: {"error":"Unauthorized access","ok":false}
+
+============================================================
+ATTACK 3 — Information Disclosure
+============================================================
+
+[*] Reading dashboard (without authentication)...
+[!] DEVICE ID: N/A
+[!] SESSION ID: N/A
+[!] VAULT HASH: N/A
+[!] VAULT VERSION: N/A
+[!] PROTOCOL PHASE: N/A
+[!] DEVICE ONLINE: N/A
+[!] POLLING INTERVAL: N/As
+
+[!] STOLEN SENSOR DATA:
+Temperatura: N/A
+Umidità: N/A
+Batteria: N/A
+
+[*] Creating legitimate session...
+[+] Legitimate session created. C1=[4, 11, 10], r1=1A==...
+
+[*] Sending corrupted ciphertext to force error leak...
+
+[!] INTERNAL ERROR EXPOSED: Authentication failed
+[!] This reveals details about the internal encryption implementation
+
+[*] Reading logs from database (without authentication)...
+
+============================================================
+SERVER LOGS (stolen without credentials)
+============================================================
+
+============================================================
+TIMELINE PROTOCOL (stolen without credentials)
+============================================================
