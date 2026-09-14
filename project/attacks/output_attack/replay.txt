@@ -1,0 +1,31 @@
+============================================================
+REPLAY VALIDATION TEST
+============================================================
+
+[1] /auth/start
+STATUS: 200
+BODY: {"C1":[1,3,10],"message":"M2 generated","ok":true,"r1":"rw=="}
+
+
+[2] /auth/respond
+STATUS: 200
+BODY: {"ciphertext":"LQHcQhXp5rqXqNQB2G3yQDZpeQa2he6guB85G1yz58gHpMSo7Jfv781r5Vkyi7pcePHFwLKg1kCWukwQLg6iL8ws3/O5wEsf9+fyOwwMBs47TLkWFisITl8adkDxzZRg","message":"M4 generated","ok":true}
+
+
+[3] Authentication completed
+session_key = 074987e56f5e581fbae1217388aa3da5
+
+[4] /session/data first send
+STATUS: 200
+BODY: {"ok":true}
+
+
+[5] /session/data replay same ciphertext
+STATUS: 409
+BODY: {"error":"Replay detected or counter invalid","ok":false}
+
+
+Expected behavior:
+•⁠  ⁠first send accepted
+•⁠  ⁠second identical send rejected as replay / invalid counter
+============================================================
