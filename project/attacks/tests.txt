@@ -1,0 +1,22 @@
+#first test on /ui/dashboard
+Mac:secondo_progetto nicholasdarisi$ curl -i http://188.218.211.175:5050/ui/dashboard
+HTTP/1.1 401 UNAUTHORIZED
+Server: Werkzeug/3.1.8 Python/3.14.6
+Date: Tue, 30 Jun 2026 15:26:41 GMT
+Content-Type: application/json
+Content-Length: 43
+Vary: Cookie
+Connection: close
+{"error":"Unauthorized access","ok":false}
+
+#second test on /ui/reset
+Mac:Desktop nicholasdarisi$ curl -i -X POST http://188.218.211.175:5050/ui/reset
+HTTP/1.1 401 UNAUTHORIZED
+Server: Werkzeug/3.1.8 Python/3.14.6
+Date: Tue, 30 Jun 2026 15:31:49 GMT
+Content-Type: application/json
+Content-Length: 43
+Vary: Cookie
+Connection: close
+{"error":"Unauthorized access","ok":false}
+
